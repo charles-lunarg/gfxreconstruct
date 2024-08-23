@@ -29,7 +29,7 @@ option(CHECK_CPP_CODE_STYLE_BASE "Git branch/commit for C++ code style compariso
 
 if(${APPLY_CPP_CODE_STYLE} OR ${CHECK_CPP_CODE_STYLE})
     find_program(CLANG_FORMAT clang-format DOC "Clang format executable")
-
+    execute_process(COMMAND ${CLANG_FORMAT} --version)
     # Python
     if(CMAKE_HOST_WIN32)
         find_program(PYTHON "python.exe" PATHS $ENV{PATH} DOC "Python 3 executable")
